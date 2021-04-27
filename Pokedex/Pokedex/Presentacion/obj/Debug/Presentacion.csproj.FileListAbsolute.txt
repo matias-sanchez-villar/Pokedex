@@ -1,0 +1,21 @@
+C:\Users\matias\source\repos\Pokedex\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\matias\source\repos\Pokedex\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\matias\source\repos\Pokedex\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\matias\source\repos\Pokedex\Presentacion\obj\Debug\Presentacion.pbxPokemon.resources
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.pbxPokemon.resources
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.frmPokemon.resources
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\matias\Documents\UTN\Tercer Cuatrimestre\Programacion 3\Windows Form\Pokedex\Pokedex\Presentacion\obj\Debug\Presentacion.pdb
