@@ -1,0 +1,11 @@
+C:\Users\matias\source\repos\Pokedex\presentacion\bin\Debug\presentacion.exe.config
+C:\Users\matias\source\repos\Pokedex\presentacion\bin\Debug\presentacion.exe
+C:\Users\matias\source\repos\Pokedex\presentacion\bin\Debug\presentacion.pdb
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.csprojAssemblyReference.cache
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.Form1.resources
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.Properties.Resources.resources
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.csproj.GenerateResource.cache
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.csproj.CoreCompileInputs.cache
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.exe
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.pdb
+C:\Users\matias\source\repos\Pokedex\presentacion\obj\Debug\presentacion.frmPokemo.resources
