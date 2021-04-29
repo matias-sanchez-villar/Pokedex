@@ -47,7 +47,7 @@ namespace presentacion
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Location = new System.Drawing.Point(378, 20);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(117, 45);
             this.btnBuscar.TabIndex = 0;
@@ -58,18 +58,19 @@ namespace presentacion
             // 
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Location = new System.Drawing.Point(44, 439);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(117, 42);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Location = new System.Drawing.Point(205, 439);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(112, 42);
             this.btnModificar.TabIndex = 2;
@@ -80,7 +81,7 @@ namespace presentacion
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Location = new System.Drawing.Point(367, 439);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 42);
             this.btnEliminar.TabIndex = 3;
@@ -91,12 +92,13 @@ namespace presentacion
             // 
             this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalle.Location = new System.Drawing.Point(530, 439);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(112, 42);
             this.btnDetalle.TabIndex = 4;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // lblFiltro
             // 
@@ -111,7 +113,7 @@ namespace presentacion
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(153, 30);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(188, 25);
             this.txtFiltro.TabIndex = 6;
@@ -121,17 +123,19 @@ namespace presentacion
             this.dgvPokemons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPokemons.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvPokemons.Location = new System.Drawing.Point(44, 85);
-            this.dgvPokemons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPokemons.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPokemons.Name = "dgvPokemons";
             this.dgvPokemons.Size = new System.Drawing.Size(598, 330);
             this.dgvPokemons.TabIndex = 7;
+            this.dgvPokemons.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvPokemons_MouseClick);
             // 
             // pbxPokemon
             // 
             this.pbxPokemon.Location = new System.Drawing.Point(706, 85);
-            this.pbxPokemon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxPokemon.Margin = new System.Windows.Forms.Padding(4);
             this.pbxPokemon.Name = "pbxPokemon";
             this.pbxPokemon.Size = new System.Drawing.Size(310, 330);
+            this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxPokemon.TabIndex = 8;
             this.pbxPokemon.TabStop = false;
             // 
@@ -151,9 +155,14 @@ namespace presentacion
             this.Controls.Add(this.btnBuscar);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1071, 550);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1071, 550);
             this.Name = "Form1";
             this.Text = "Pokedex";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).EndInit();
             this.ResumeLayout(false);

@@ -4,3 +4,9 @@ C:\Users\matias\source\repos\Pokedex\Dominio\obj\Debug\Dominio.csprojAssemblyRef
 C:\Users\matias\source\repos\Pokedex\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\matias\source\repos\Pokedex\Dominio\obj\Debug\Dominio.dll
 C:\Users\matias\source\repos\Pokedex\Dominio\obj\Debug\Dominio.pdb
+C:\Users\matias\Downloads\Pokedex\Pokedex\Dominio\bin\Debug\Dominio.dll
+C:\Users\matias\Downloads\Pokedex\Pokedex\Dominio\bin\Debug\Dominio.pdb
+C:\Users\matias\Downloads\Pokedex\Pokedex\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\matias\Downloads\Pokedex\Pokedex\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\matias\Downloads\Pokedex\Pokedex\Dominio\obj\Debug\Dominio.dll
+C:\Users\matias\Downloads\Pokedex\Pokedex\Dominio\obj\Debug\Dominio.pdb

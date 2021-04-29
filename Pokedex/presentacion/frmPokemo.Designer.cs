@@ -71,7 +71,6 @@ namespace presentacion
             this.lblDescripcion.Size = new System.Drawing.Size(93, 18);
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripcion";
-            this.lblDescripcion.Click += new System.EventHandler(this.lblDescripcion_Click);
             // 
             // lblURLimagen
             // 
@@ -110,6 +109,7 @@ namespace presentacion
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtNombre
             // 
@@ -167,7 +167,11 @@ namespace presentacion
             this.Controls.Add(this.lblNombre);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(392, 331);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(392, 331);
             this.Name = "frmPokemo";
             this.Text = "Pokedex - Agregar Pokemon";
             ((System.ComponentModel.ISupportInitialize)(this.numNumero)).EndInit();

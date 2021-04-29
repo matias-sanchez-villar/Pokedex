@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace presentacion
 {
-    public partial class frmPokemo : Form
+    public partial class frmDetalle : Form
     {
-        public frmPokemo()
+        public frmDetalle()
         {
             InitializeComponent();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
