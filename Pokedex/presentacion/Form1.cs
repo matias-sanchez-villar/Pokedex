@@ -23,6 +23,7 @@ namespace presentacion
         {
             frmPokemo FrmPokemos = new frmPokemo();
             FrmPokemos.ShowDialog();
+            CargarGrilla();
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -32,6 +33,11 @@ namespace presentacion
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            CargarGrilla();
+        }
+
+        private void CargarGrilla()
         {
             List<Pokemon> listaPokemons = new List<Pokemon>();
             PokemonNegocio pokemonNegocio = new PokemonNegocio();

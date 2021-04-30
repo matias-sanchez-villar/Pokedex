@@ -42,6 +42,8 @@ namespace presentacion
             this.txtURLimgane = new System.Windows.Forms.TextBox();
             this.numNumero = new System.Windows.Forms.NumericUpDown();
             this.cboTipo = new System.Windows.Forms.ComboBox();
+            this.cboDebilidad = new System.Windows.Forms.ComboBox();
+            this.lblDebilidad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numNumero)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,17 +95,18 @@ namespace presentacion
             // btnAceptar
             // 
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.Location = new System.Drawing.Point(53, 222);
+            this.btnAceptar.Location = new System.Drawing.Point(53, 266);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(88, 42);
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Location = new System.Drawing.Point(192, 222);
+            this.btnCancelar.Location = new System.Drawing.Point(192, 266);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(88, 42);
             this.btnCancelar.TabIndex = 6;
@@ -148,11 +151,30 @@ namespace presentacion
             this.cboTipo.Size = new System.Drawing.Size(186, 26);
             this.cboTipo.TabIndex = 11;
             // 
+            // cboDebilidad
+            // 
+            this.cboDebilidad.FormattingEnabled = true;
+            this.cboDebilidad.Location = new System.Drawing.Point(136, 219);
+            this.cboDebilidad.Name = "cboDebilidad";
+            this.cboDebilidad.Size = new System.Drawing.Size(186, 26);
+            this.cboDebilidad.TabIndex = 13;
+            // 
+            // lblDebilidad
+            // 
+            this.lblDebilidad.AutoSize = true;
+            this.lblDebilidad.Location = new System.Drawing.Point(39, 222);
+            this.lblDebilidad.Name = "lblDebilidad";
+            this.lblDebilidad.Size = new System.Drawing.Size(75, 18);
+            this.lblDebilidad.TabIndex = 12;
+            this.lblDebilidad.Text = "Debilidad";
+            // 
             // frmPokemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 292);
+            this.ClientSize = new System.Drawing.Size(376, 338);
+            this.Controls.Add(this.cboDebilidad);
+            this.Controls.Add(this.lblDebilidad);
             this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.numNumero);
             this.Controls.Add(this.txtURLimgane);
@@ -169,11 +191,10 @@ namespace presentacion
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(392, 331);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(392, 331);
             this.Name = "frmPokemo";
             this.Text = "Pokedex - Agregar Pokemon";
+            this.Load += new System.EventHandler(this.frmPokemo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numNumero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,5 +215,7 @@ namespace presentacion
         private System.Windows.Forms.TextBox txtURLimgane;
         private System.Windows.Forms.NumericUpDown numNumero;
         private System.Windows.Forms.ComboBox cboTipo;
+        private System.Windows.Forms.ComboBox cboDebilidad;
+        private System.Windows.Forms.Label lblDebilidad;
     }
 }

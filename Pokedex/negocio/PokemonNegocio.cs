@@ -13,28 +13,21 @@ namespace negocio
         public List<Pokemon> Listar()
         {
             List < Pokemon > Lista = new List<Pokemon>();
-            SqlConnection Conexion = new SqlConnection();
-            SqlCommand Comando = new SqlCommand();
-            SqlDataReader Lector;
+            AccesoDatos Datos = new AccesoDatos();
 
             try
              {
-                Conexion.ConnectionString = "Data Source=DESKTOP-K54EB4U\\SQLEXPRESS; Initial Catalog=Pokedex; integrated security=true;";
-                Comando.CommandType = System.Data.CommandType.Text;
-                Comando.CommandText = "select Nombre, p.Descripcion, UrlImagen, T.Descripcion Tipo, D.Descripcion Debilidad from Pokemons P, Elementos T, Elementos D where p.IdTipo = t.ID and D.ID = P.IdDebilidad";
-                Comando.Connection = Conexion;
+                Datos.SetearConsulta("select Nombre, p.Descripcion, UrlImagen, T.Descripcion Tipo, D.Descripcion Debilidad from Pokemons P, Elementos T, Elementos D where p.IdTipo = t.ID and D.ID = P.IdDebilidad");
+                Datos.EjecutarLectura();
 
-                Conexion.Open();
-                Lector = Comando.ExecuteReader();
-
-                while (Lector.Read())
+                while (Datos.Lector.Read())
                 {
                     Pokemon aux = new Pokemon();
-                    aux.Nombre = (string)Lector["Nombre"];
-                    aux.Descripcion = (string)Lector["Descripcion"];
-                    aux.URLImagen = (string)Lector["UrlImagen"];
-                    aux.Tipo = new Elemento((string)Lector["Tipo"]);
-                    aux.Debilidad = new Elemento((string)Lector["Debilidad"]);
+                    aux.Nombre = (string)Datos.Lector["Nombre"];
+                    aux.Descripcion = (string)Datos.Lector["Descripcion"];
+                    aux.URLImagen = (string)Datos.Lector["UrlImagen"];
+                    aux.Tipo = new Elemento((string)Datos.Lector["Tipo"]);
+                    aux.Debilidad = new Elemento((string)Datos.Lector["Debilidad"]);
 
                     Lista.Add(aux);
                 }
@@ -45,7 +38,36 @@ namespace negocio
              {
                 throw e;
              }
+            finally
+            {
+                Datos.CerrarConsulta();
+            }
 
+        }
+
+        public void Agregar(Pokemon pokemon)
+        {
+            AccesoDatos Datos = new AccesoDatos();
+
+            try
+            {
+
+                string valores = "values(" + pokemon.Numero + ", '" + pokemon.Nombre + "', '" + pokemon.Descripcion + "', '" + pokemon.URLImagen + "', " + pokemon.Tipo.ID + ", " + pokemon.Debilidad.ID + ")";
+                Datos.SetearConsulta("insert into Pokemons (Numero, Nombre, Descripcion, UrlImagen, IdTipo, IdDebilidad) " + valores);
+
+
+                Datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Datos.CerrarConsulta();
+            }
         }
     }
 }
