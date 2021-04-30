@@ -33,13 +33,13 @@ namespace presentacion
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.lblDeblidad = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -62,6 +62,7 @@ namespace presentacion
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -72,14 +73,15 @@ namespace presentacion
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // pictureBox1
+            // pbxImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(31, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 116);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pbxImagen.Location = new System.Drawing.Point(31, 56);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(135, 116);
+            this.pbxImagen.TabIndex = 3;
+            this.pbxImagen.TabStop = false;
             // 
             // lblNombre
             // 
@@ -139,7 +141,7 @@ namespace presentacion
             this.Controls.Add(this.lblDeblidad);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAceptar);
@@ -147,7 +149,8 @@ namespace presentacion
             this.MaximizeBox = false;
             this.Name = "frmDetalle";
             this.Text = "Pokedex - Detalle";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmDetalle_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +161,7 @@ namespace presentacion
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblDeblidad;

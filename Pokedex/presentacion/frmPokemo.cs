@@ -14,9 +14,16 @@ namespace presentacion
 {
     public partial class frmPokemo : Form
     {
+        private Pokemon pokemon= null;
         public frmPokemo()
         {
             InitializeComponent();
+        }
+
+        public frmPokemo(Pokemon pokemon)
+        {
+            InitializeComponent();
+            this.pokemon = pokemon;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -52,6 +59,16 @@ namespace presentacion
 
         private void frmPokemo_Load(object sender, EventArgs e)
         {
+            if (pokemon != null)
+            {
+                txtNombre.Text += pokemon.Nombre;
+                numNumero.Value = pokemon.Numero;
+                txtDescripcion.Text = pokemon.Descripcion;
+                txtURLimgane.Text = pokemon.URLImagen;
+                cboTipo.Text += pokemon.Tipo;
+                cboDebilidad.Text += pokemon.Debilidad;
+            }
+
             ElementoNegocio elementoNegocio = new ElementoNegocio();
             try
             {
