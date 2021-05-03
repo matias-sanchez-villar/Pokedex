@@ -24,6 +24,7 @@ namespace presentacion
         {
             InitializeComponent();
             this.pokemon = pokemon;
+            Text = "Pokemon - Modificar Pokemon";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -33,10 +34,12 @@ namespace presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Pokemon pokemon = new Pokemon();
             PokemonNegocio pokemonNegocio = new PokemonNegocio();
             try
             {
+                if (pokemon == null)
+                    pokemon = new Pokemon();
+
                 pokemon.Nombre = txtNombre.Text;
                 pokemon.Descripcion = txtDescripcion.Text;
                 pokemon.URLImagen = txtURLimgane.Text;
@@ -44,9 +47,18 @@ namespace presentacion
                 pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
                 pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
 
-                pokemonNegocio.Agregar(pokemon);
 
-                MessageBox.Show("Agregado sin problemas");
+                if(pokemon.ID == 0)
+                {
+                    pokemonNegocio.Agregar(pokemon);
+                    MessageBox.Show("Agregado sin problemas");
+                }
+                else
+                {
+                    pokemonNegocio.Modificar(pokemon);
+                    MessageBox.Show("modificado sin problema");
+                }
+
                 this.Close();
             }
             catch (Exception ex)
@@ -59,21 +71,27 @@ namespace presentacion
 
         private void frmPokemo_Load(object sender, EventArgs e)
         {
-            if (pokemon != null)
-            {
-                txtNombre.Text += pokemon.Nombre;
-                numNumero.Value = pokemon.Numero;
-                txtDescripcion.Text = pokemon.Descripcion;
-                txtURLimgane.Text = pokemon.URLImagen;
-                cboTipo.Text += pokemon.Tipo;
-                cboDebilidad.Text += pokemon.Debilidad;
-            }
-
             ElementoNegocio elementoNegocio = new ElementoNegocio();
             try
             {
-                cboTipo.DataSource = elementoNegocio.Listar();
                 cboDebilidad.DataSource = elementoNegocio.Listar();
+                cboDebilidad.ValueMember = "ID";
+                cboDebilidad.DisplayMember = "Nombre";
+
+                cboTipo.DataSource = elementoNegocio.Listar();
+                cboTipo.ValueMember = "ID";
+                cboTipo.DisplayMember = "Nombre";
+
+
+                if (pokemon != null)
+                {
+                    txtNombre.Text += pokemon.Nombre;
+                    numNumero.Value = pokemon.Numero;
+                    txtDescripcion.Text = pokemon.Descripcion;
+                    txtURLimgane.Text = pokemon.URLImagen;
+                    cboDebilidad.SelectedValue = pokemon.Debilidad.ID;
+                    cboTipo.SelectedValue = pokemon.Tipo.ID;
+                }
             }
             catch (Exception ex)
             {

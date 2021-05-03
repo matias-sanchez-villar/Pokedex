@@ -45,27 +45,21 @@ namespace presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmDetalle FrmDetalle = new frmDetalle();
-            FrmDetalle.ShowDialog();
+            if (pokemon != null)
+            {
+                frmPokemo modificar = new frmPokemo(this.pokemon);
+                modificar.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Pokemon pokemon = new Pokemon();
             PokemonNegocio pokemonNegocio = new PokemonNegocio();
             try
             {
-                /*
-                pokemon.Nombre = txtNombre.Text;
-                pokemon.Descripcion = txtDescripcion.Text;
-                pokemon.URLImagen = txtURLimgane.Text;
-                pokemon.Numero = (int)numNumero.Value;
-                pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
-                pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
-                */
-                pokemonNegocio.Agregar(pokemon);
-
-                MessageBox.Show("Agregado sin problemas");
+                pokemonNegocio.Eliminar(pokemon.ID);
+                MessageBox.Show("Eliminado sin problemas");
                 this.Close();
             }
             catch (Exception ex)

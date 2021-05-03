@@ -10,24 +10,29 @@ namespace negocio
 {
     public class PokemonNegocio
     {
+        private AccesoDatos datos;
         public List<Pokemon> Listar()
         {
             List < Pokemon > Lista = new List<Pokemon>();
-            AccesoDatos Datos = new AccesoDatos();
+            datos = new AccesoDatos();
 
             try
              {
-                Datos.SetearConsulta("select Nombre, p.Descripcion, UrlImagen, T.Descripcion Tipo, D.Descripcion Debilidad from Pokemons P, Elementos T, Elementos D where p.IdTipo = t.ID and D.ID = P.IdDebilidad");
-                Datos.EjecutarLectura();
+                datos.SetearConsulta("select P.ID IDPokemon, Numero, Nombre, p.Descripcion, UrlImagen, T.ID IDTipo, T.Descripcion Tipo, D.ID IDDebilidad, D.Descripcion Debilidad from Pokemons P, Elementos T, Elementos D where p.IdTipo = t.ID and D.ID = P.IdDebilidad");
+                datos.EjecutarLectura();
 
-                while (Datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Pokemon aux = new Pokemon();
-                    aux.Nombre = (string)Datos.Lector["Nombre"];
-                    aux.Descripcion = (string)Datos.Lector["Descripcion"];
-                    aux.URLImagen = (string)Datos.Lector["UrlImagen"];
-                    aux.Tipo = new Elemento((string)Datos.Lector["Tipo"]);
-                    aux.Debilidad = new Elemento((string)Datos.Lector["Debilidad"]);
+                    aux.ID = (int) datos.Lector["IDPokemon"];
+                    aux.Numero = (int)datos.Lector["Numero"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.URLImagen = (string)datos.Lector["UrlImagen"];
+                    aux.Tipo = new Elemento((string)datos.Lector["Tipo"]);
+                    aux.Tipo.ID = (int)datos.Lector["IDTipo"];
+                    aux.Debilidad = new Elemento((string)datos.Lector["Debilidad"]);
+                    aux.Debilidad.ID = (int)datos.Lector["IDDebilidad"];
 
                     Lista.Add(aux);
                 }
@@ -40,7 +45,7 @@ namespace negocio
              }
             finally
             {
-                Datos.CerrarConsulta();
+                datos.CerrarConsulta();
             }
 
         }
@@ -51,13 +56,10 @@ namespace negocio
 
             try
             {
-
                 string valores = "values(" + pokemon.Numero + ", '" + pokemon.Nombre + "', '" + pokemon.Descripcion + "', '" + pokemon.URLImagen + "', " + pokemon.Tipo.ID + ", " + pokemon.Debilidad.ID + ")";
                 Datos.SetearConsulta("insert into Pokemons (Numero, Nombre, Descripcion, UrlImagen, IdTipo, IdDebilidad) " + valores);
 
-
                 Datos.EjecutarAccion();
-
             }
             catch (Exception ex)
             {
@@ -67,6 +69,54 @@ namespace negocio
             finally
             {
                 Datos.CerrarConsulta();
+            }
+        }
+
+        public void Modificar(Pokemon Modificar)
+        {
+            datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("update Pokemons set Numero= @Numero, Nombre = @Nombre, Descripcion = @Descripcion, UrlImagen = @UrlImagen, IdTipo = @Tipo, IdDebilidad = @Debilidad where ID = @ID");
+
+                datos.setearParametro("@ID", Modificar.ID);
+                datos.setearParametro("@Numero", Modificar.Numero);
+                datos.setearParametro("@Nombre", Modificar.Nombre);
+                datos.setearParametro("@Descripcion", Modificar.Descripcion);
+                datos.setearParametro("@UrlImagen", Modificar.URLImagen);
+                datos.setearParametro("@Tipo", Modificar.Tipo.ID);
+                datos.setearParametro("@Debilidad", Modificar.Debilidad.ID);
+
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConsulta();
+            }
+        }
+
+        public void Eliminar(int ID)
+        {
+            datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("Delete From POKEMONS Where Id = " + ID);
+
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConsulta();
             }
         }
     }

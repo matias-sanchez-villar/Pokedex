@@ -28,8 +28,10 @@ namespace presentacion
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            frmDetalle FrmDetalle = new frmDetalle();
+            Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            frmDetalle FrmDetalle = new frmDetalle(seleccionado);
             FrmDetalle.ShowDialog();
+            CargarGrilla();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace presentacion
             CargarGrilla();
         }
 
-        private void CargarGrilla()
+        public void CargarGrilla()
         {
             List<Pokemon> listaPokemons = new List<Pokemon>();
             PokemonNegocio pokemonNegocio = new PokemonNegocio();
@@ -74,6 +76,33 @@ namespace presentacion
             // Explicacion de seleccion, no va a ir acá-
             Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
             CargarImg(seleccionado.URLImagen);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            frmPokemo modificar = new frmPokemo(seleccionado);
+            modificar.ShowDialog();
+            CargarGrilla();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            PokemonNegocio Eliminar = new PokemonNegocio();
+
+            try
+            {
+                Eliminar.Eliminar(seleccionado.ID);
+                MessageBox.Show("Pokemon Eliminado");
+                CargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            Eliminar.Eliminar(seleccionado.ID);
         }
     }
 }

@@ -19,10 +19,20 @@ namespace negocio
             Comando = new SqlCommand();
         }
 
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
+
         public void SetearConsulta(string Consulta)
         {
             Comando.CommandType = System.Data.CommandType.Text;
             Comando.CommandText = Consulta;
+        }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            Comando.Parameters.AddWithValue(nombre, valor);
         }
 
         public void EjecutarLectura()
@@ -32,23 +42,18 @@ namespace negocio
             lector = Comando.ExecuteReader();
         }
 
-        public void CerrarConsulta()
-        {
-            if (lector != null) lector.Close();
-
-            Conexion.Close();
-        }
-
-        public SqlDataReader Lector
-        {
-            get { return lector; }
-        }
-
         internal void EjecutarAccion()
         {
             Comando.Connection = Conexion;
             Conexion.Open();
             Comando.ExecuteNonQuery();
+        }
+
+        public void CerrarConsulta()
+        {
+            if (lector != null) lector.Close();
+
+            Conexion.Close();
         }
     }
 }
