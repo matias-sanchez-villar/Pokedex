@@ -133,10 +133,10 @@ namespace presentacion
             // 
             // pbxPokemon
             // 
-            this.pbxPokemon.Location = new System.Drawing.Point(706, 85);
+            this.pbxPokemon.Location = new System.Drawing.Point(737, 85);
             this.pbxPokemon.Margin = new System.Windows.Forms.Padding(4);
             this.pbxPokemon.Name = "pbxPokemon";
-            this.pbxPokemon.Size = new System.Drawing.Size(310, 330);
+            this.pbxPokemon.Size = new System.Drawing.Size(305, 330);
             this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxPokemon.TabIndex = 8;
             this.pbxPokemon.TabStop = false;
@@ -145,6 +145,7 @@ namespace presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::presentacion.Properties.Resources.FondoPokedex;
             this.ClientSize = new System.Drawing.Size(1055, 511);
             this.Controls.Add(this.pbxPokemon);
             this.Controls.Add(this.dgvPokemons);
